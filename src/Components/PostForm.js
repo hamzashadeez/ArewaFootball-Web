@@ -17,13 +17,13 @@ function PostForm() {
       </div>
       <hr className="mt-1"></hr>
       <div className='d-flex justify-content-between'>
-        <button className="btn shadow-none text-secondary">
+        <button className="btn shadow-none text-secondary" style={{fontSize: '12px'}}>
           Photo
-          <PhotoIcon className="ml-1" style={{ fontSize: 20 }} />
+          <PhotoIcon className="ml-1" style={{ fontSize: 15 }} />
         </button>
-        <button className="btn shadow-none text-secondary">
+        <button className="btn shadow-none text-secondary" style={{fontSize: '12px'}}>
           Post
-          <SendIcon className="ml-1" style={{ fontSize: 20 }} />
+          <SendIcon className="ml-1" style={{ fontSize: 15 }} />
         </button>
       </div>
     </div>
