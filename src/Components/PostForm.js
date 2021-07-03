@@ -5,8 +5,8 @@ import SendIcon from "@material-ui/icons/Send";
 import PhotoIcon from "@material-ui/icons/Photo";
 function PostForm() {
   return (
-    <div className="p-2 bg-dark mb-4  ">
-      <div className="d-flex">
+    <div className="p-2 mb-4 shadow-sm rounded " style={{backgroundColor: "white"}}>
+      <div className="d-flex text-secondary">
         <AccountCircleIcon style={{ fontSize: 40 }} />
         <FormControl
           className="bg-transparent border-0 text-secondary shadow-none"
@@ -16,12 +16,12 @@ function PostForm() {
         />
       </div>
       <hr className="mt-1"></hr>
-      <div className='d-flex justify-content-between'>
-        <button className="btn shadow-none text-secondary" style={{fontSize: '12px'}}>
+      <div className='d-flex justify-content-between mx-2'>
+        <button className="btn shadow-none bg-secondary text-light" style={{fontSize: '12px'}}>
           Photo
           <PhotoIcon className="ml-1" style={{ fontSize: 15 }} />
         </button>
-        <button className="btn shadow-none text-secondary" style={{fontSize: '12px'}}>
+        <button className="btn shadow-none bg-danger text-light" color="secondary" style={{fontSize: '12px'}}>
           Post
           <SendIcon className="ml-1" style={{ fontSize: 15 }} />
         </button>

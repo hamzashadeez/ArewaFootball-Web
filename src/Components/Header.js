@@ -12,7 +12,7 @@ function Header() {
     <Navbar
       collapseOnSelect
       expand="lg"
-      bg="dark"
+      bg="secondary"
       sticky="top"
       className="mb-3"
       variant="dark"
