@@ -14,7 +14,7 @@ function Post({data}) {
           <div className="d-flex">
             <AccountCircleIcon style={{ fontSize: 40 }} />
             <div className="text-left ml-1">
-              <h6 className="mb-0">{data.data.name}</h6>
+              <h6 className="mb-0 post_header">{data.data.name}</h6>
               <p
                 
                 className="text-left text-sm my-0 club__name"
@@ -25,7 +25,7 @@ function Post({data}) {
           </div>
         </button>
         <button className="btn shadow-none text-dark">
-          <MoreHorizIcon style={{ fontSize: 30 }} />
+          <MoreHorizIcon style={{ fontSize: 25 }} />
         </button>
       </div>
       <div>
@@ -37,11 +37,11 @@ function Post({data}) {
           />
         <div className="mx-3">
           {/* caption */}
-          <h6>{data.data.title}</h6>
-          <p className="text-dark">
+          <h6 className='sm'>{data.data.title}</h6>
+          <p className="text-dark sm">
           {data.data.body}
           </p>
-          <p className='text-sm' style={{ fontSize: 11}}>12 mins ago</p>
+          <p className='text-sm' style={{ fontSize: 9}}>12 mins ago</p>
         </div>
       </div>
       {/* Footer */}

@@ -1,9 +1,25 @@
 .profileHeader{
-    background-color: burlywood;
-    padding: 15px;
+    background-color: white;
+    padding: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 25vh;
     flex-direction: column;
+    border-radius: 10px;
+}
+
+#user__name{
+  margin-bottom: 2px;  
+}
+#user__email{
+  margin-bottom: 2px;  
+  font-size: 13px;
+}
+
+.mypost_div{
+    width: 100%;
+    min-height: 60vh;
+    margin-top: 10px;
+    /* overflow-y: scroll; */
 }

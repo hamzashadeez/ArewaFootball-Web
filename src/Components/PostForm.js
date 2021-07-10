@@ -5,15 +5,18 @@ import SendIcon from "@material-ui/icons/Send";
 import PhotoIcon from "@material-ui/icons/Photo";
 import {useRecoilState} from 'recoil'
 import {show} from '../Recoil/PostModelState'
+import { userState } from "../Recoil/UserState";
+import Avatar from '@material-ui/core/Avatar';
 
 function PostForm() {
   const [showState, setShowState] = useRecoilState(show);
+  const [user, setUser] = useRecoilState(userState);
 
   const showModel = ()=> setShowState(true)
   return (
     <div className="p-2 mb-4 shadow-sm rounded " style={{backgroundColor: "white"}}>
       <div className="d-flex ">
-        <AccountCircleIcon style={{ fontSize: 40 }} />
+        <Avatar src={user? user.photo: ""} style={{ fontSize: 30 }} />
         <FormControl
           className="bg-transparent border-0 text-secondary shadow-none"
           placeholder="Start a post"
