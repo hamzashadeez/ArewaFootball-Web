@@ -1,0 +1,24 @@
+.vid{
+    margin-bottom: 15px;
+    background-color: white;
+    width: 100%;
+    border-radius: 3px;
+}
+.vid > div{
+    padding: 10px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.vid > div > h5{
+    margin: 0;
+    font-size: 15px;
+}
+
+.vid > video{
+    width: 100%;
+    object-fit: contain;
+    margin-bottom: 25px;
+}
