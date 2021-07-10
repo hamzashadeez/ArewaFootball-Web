@@ -1,11 +1,13 @@
 import React from "react";
 import "./Login.css";
 import Logo from "../assets/google-logo.png";
-import { auth, provider } from "../Config/Firebase";
+import { auth, provider, db } from "../Config/Firebase";
 import { userState } from "../Recoil/UserState";
 import { useRecoilState } from "recoil";
+import { useHistory } from "react-router-dom";
 
 function Login() {
+  const history = useHistory();
   const [user, setUser] = useRecoilState(userState);
   const login = async () => {
     auth
@@ -17,12 +19,21 @@ function Login() {
         // The signed-in user info.
         var user = result.user;
         const userData = {
-            name: user.display_name,
-            email: user.email,
-            photo: user.photoURL,
-            post: [],
-        }
-        console.log( userData);
+          name: user.displayName,
+          email: user.email,
+          photo: user.photoURL,
+          post: [],
+        };
+        // Save user data to firebase
+        db.collection("Users")
+          .doc(userData.name)
+          .set(userData, { merge: true })
+          .then(() => {
+            // user data to state management
+            setUser(userData);
+            history.push("/");
+            console.log("Success");
+          });
         // ...
       })
       .catch((error) => {

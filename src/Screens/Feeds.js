@@ -18,7 +18,7 @@ function Feeds() {
     });
   }, []);
   return (
-    <div className="px-3">
+    <div className="px-0">
       <PostForm />
       <PostModal />
       {posts.map((post) => <Post key={post.id} data={post} />)}

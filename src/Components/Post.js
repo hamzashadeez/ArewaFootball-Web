@@ -1,4 +1,5 @@
 import React from "react";
+import './post.css'
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import FavoriteIcon from "@material-ui/icons/Favorite";
@@ -15,8 +16,8 @@ function Post({data}) {
             <div className="text-left ml-1">
               <h6 className="mb-0">{data.data.name}</h6>
               <p
-                style={{ fontSize: "12px" }}
-                className="text-left text-sm my-0"
+                
+                className="text-left text-sm my-0 club__name"
               >
                 {data.data.club}
               </p>
