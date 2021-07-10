@@ -1,8 +1,14 @@
 .anchor{
     text-decoration: none !important;
-    color: #eee;
+    color: burlywood;
 }
 
 .anchor:hover{
-    color: #aaa;
+    color: #ddd;
 }
+
+.navB{
+    color: burlywood !important;
+    font-weight: bolder !important;
+}
+

@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import PostForm from "../Components/PostForm";
 import Post from "../Components/Post";
 import { db } from "../Config/Firebase";
+import PostModal from "../Modals/PostModal";
 
 function Feeds() {
   const [posts, setPosts] = useState([]);
-
+  
   useEffect(() => {
     db.collection("posts").onSnapshot((shot) => {
       setPosts(
@@ -19,7 +20,8 @@ function Feeds() {
   return (
     <div className="px-3">
       <PostForm />
-      {posts.map((post) => <Post key={post.key} data={post} />)}
+      <PostModal />
+      {posts.map((post) => <Post key={post.id} data={post} />)}
     </div>
   );
 }

@@ -3,7 +3,13 @@ import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import FormControl from "react-bootstrap/FormControl";
 import SendIcon from "@material-ui/icons/Send";
 import PhotoIcon from "@material-ui/icons/Photo";
+import {useRecoilState} from 'recoil'
+import {show} from '../Recoil/PostModelState'
+
 function PostForm() {
+  const [showState, setShowState] = useRecoilState(show);
+
+  const showModel = ()=> setShowState(true)
   return (
     <div className="p-2 mb-4 shadow-sm rounded " style={{backgroundColor: "white"}}>
       <div className="d-flex ">
@@ -13,15 +19,16 @@ function PostForm() {
           placeholder="Start a post"
           aria-label="post"
           aria-describedby="basic-addon1"
+          onClick={()=>showModel()}
         />
       </div>
       <hr className="mt-1"></hr>
       <div className='d-flex justify-content-between mx-2'>
-        <button className="btn shadow-none bg-dark text-light" style={{fontSize: '12px'}}>
+        <button className="btn shadow-none bg-dark text-light" style={{fontSize: '12px'}} onClick={()=>showModel()}>
           Photo
           <PhotoIcon className="ml-1" style={{ fontSize: 15 }} />
         </button>
-        <button className="btn shadow-none bg-danger text-light" color="secondary" style={{fontSize: '12px'}}>
+        <button className="btn shadow-none bg-danger text-light" color="secondary" style={{fontSize: '12px'}} onClick={()=>showModel()}>
           Post
           <SendIcon className="ml-1" style={{ fontSize: 15 }} />
         </button>

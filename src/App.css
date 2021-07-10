@@ -5,13 +5,13 @@
 }
 
 body{
-  background-color: whitesmoke !important;
+  background-color: rgb(202, 204, 206) !important;
 }
 
 .App{
   /* background-color: bisque; */
-  max-width: 1020px;
-  margin: 0 auto;
+  /* max-width: 1020px; */
+  /* margin: 0 auto; */
   position: relative;
   min-height: 100vh;
 }

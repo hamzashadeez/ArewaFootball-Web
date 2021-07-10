@@ -1,0 +1,9 @@
+.profileHeader{
+    background-color: burlywood;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 25vh;
+    flex-direction: column;
+}
