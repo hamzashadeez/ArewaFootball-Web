@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Video from "../Components/Video";
 import { db } from "../Config/Firebase";
+import firebase from "firebase";
+import { userState } from "../Recoil/UserState";
+import { useRecoilState } from "recoil";
 
 function Highlights() {
   const [videos, setVideos] = useState([]);
+  const [user, setUser] = useRecoilState(userState);
   useEffect(() => {
     db.collection("videos").onSnapshot((shot) => {
       setVideos(
@@ -14,6 +18,24 @@ function Highlights() {
       );
     });
   }, []);
+
+  useEffect(() => {
+    if (!user) {
+      firebase.auth().onAuthStateChanged((userData) => {
+        if (userData) {
+          db.collection("Users")
+            .doc(userData.displayName)
+            .get()
+            .then((user1) => {
+              setUser(user1.data());
+            });
+        } else {
+          console.log("No user here");
+        }
+      });
+    }
+  }, []);
+ 
   return (
     <div>
       {videos.map((vid) => (

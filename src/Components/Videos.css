@@ -17,8 +17,23 @@
     font-size: 15px;
 }
 
+.vid > div > p{
+    margin: 0;
+}
+
 .vid > video{
     width: 100%;
     object-fit: contain;
     margin-bottom: 25px;
+}
+
+@media screen and (max-width: 500px) {
+    .vid > div > h5{
+        margin: 0;
+        font-size: 12px;
+    }
+
+    .vid > div{
+        font-size: 11px;
+    }
 }
